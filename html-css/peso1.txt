@@ -1,0 +1,1 @@
+Este es un archivo para poder hacer seguimiento con git de la carpeta dónde se encuentra.
