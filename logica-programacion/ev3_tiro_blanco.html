@@ -1,0 +1,47 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    
+    var radio = 10;
+    var xAleatorio;
+    var yAleatorio;
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    function coordAleatorias (xMaximo,yMaximo){
+        xAleatorio = Math.floor(Math.random()*xMaximo);
+        yAleatorio = Math.floor(Math.random()*yMaximo);
+    }
+    function diseniarCircunferencia (x,y,radio,color){
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+    function objetivo (xAleatorio,yAleatorio){
+        diseniarCircunferencia(xAleatorio,yAleatorio,radio+20,"red");
+        diseniarCircunferencia(xAleatorio,yAleatorio,radio+10,"white");
+        diseniarCircunferencia(xAleatorio,yAleatorio,radio,"red");
+    }
+    function actualizarPantalla(){
+        pincel.clearRect(0,0,600,400);
+        coordAleatorias(600,400);
+        objetivo(xAleatorio,yAleatorio);        
+    }
+    function disparar(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        if ((x<xAleatorio+10)&&
+            (x>xAleatorio-10)&&
+            (y<yAleatorio+10)&&
+            (y>yAleatorio-10)){
+            alert("ACERTÓ");
+        }
+    }
+
+    setInterval(actualizarPantalla,1000);
+    pantalla.onclick = disparar;
+    
+</script>
