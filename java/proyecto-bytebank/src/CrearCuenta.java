@@ -9,17 +9,13 @@ public class CrearCuenta {
 		segundaCuenta.saldo = 500;
 		System.out.println(segundaCuenta.saldo);
 		
-		Cuenta terceraCuenta = segundaCuenta;
-		
-		System.out.println(primeraCuenta);
-		System.out.println(segundaCuenta);
-		System.out.println(terceraCuenta);
 		
 		primeraCuenta.depositar(2500);
 		primeraCuenta.mostrarSaldo();
 		
 		primeraCuenta.retirar(400);
 		primeraCuenta.mostrarSaldo();
+		
 		System.out.println("transferencia-----");
 		primeraCuenta.mostrarSaldo();
 		segundaCuenta.mostrarSaldo();
