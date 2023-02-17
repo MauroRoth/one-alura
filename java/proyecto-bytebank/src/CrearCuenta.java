@@ -1,14 +1,13 @@
 
 public class CrearCuenta {
 	public static void main(String[] args) {
-		Cuenta primeraCuenta = new Cuenta();
-		primeraCuenta.saldo = 1000;
-		System.out.println(primeraCuenta.saldo);
+		Cuenta primeraCuenta = new Cuenta(1,1);
+		primeraCuenta.setSaldo(1000);
+		System.out.println(primeraCuenta.getSaldo());
 		
-		Cuenta segundaCuenta = new Cuenta();
-		segundaCuenta.saldo = 500;
-		System.out.println(segundaCuenta.saldo);
-		
+		Cuenta segundaCuenta = new Cuenta(1,2);
+		segundaCuenta.setSaldo(500);
+		System.out.println(segundaCuenta.getSaldo());
 		
 		primeraCuenta.depositar(2500);
 		primeraCuenta.mostrarSaldo();
@@ -27,5 +26,7 @@ public class CrearCuenta {
 		
 		primeraCuenta.mostrarSaldo();
 		segundaCuenta.mostrarSaldo();
+		
+		System.out.println("Total de cuentas: "+Cuenta.getTotal());
 	}
 }
