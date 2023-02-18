@@ -1,3 +1,4 @@
+package funcionarios;
 
 public class Funcionario {
 	//miembros de clase
