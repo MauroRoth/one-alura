@@ -1,16 +1,18 @@
-package funcionarios;
+package empleados;
 
-public class Funcionario {
+public abstract class Empleado {
 	//miembros de clase
 	
 	//miembros de instancia
 	//--atributos
 	private String nombre;
 	private String documento;
-	private double salario;
+	protected String password;
+	protected double basico;
+	protected double salario;
 	
 	//--constructor
-	public Funcionario() {
+	public Empleado() {
 		
 	}
 	//--getters and setters
@@ -34,10 +36,28 @@ public class Funcionario {
 	}
 	
 	//otros métodos
-	public double getBonificacion() {
-		return this.getSalario()*0.1;
+	public abstract double getBonificacion();
+	
+	public boolean autenticar(String password) {
+	    if (this.password == password) {
+	        return true;
+	    } else {
+	        return false;
+	    }
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public double getBasico() {
+		return basico;
+	}
+	public void setBasico(double basico) {
+		this.basico = basico;
+	}
 	public void str() {
 		System.out.println(
 				"\nnombre: " + this.getNombre()

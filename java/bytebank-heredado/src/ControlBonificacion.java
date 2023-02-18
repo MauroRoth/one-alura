@@ -1,4 +1,4 @@
-import funcionarios.Funcionario;
+import empleados.Empleado;
 
 public class ControlBonificacion {
 	private double suma;
@@ -7,7 +7,7 @@ public class ControlBonificacion {
 		return this.suma;
 	}
 	
-	public void registrar(Funcionario funcionario) {
+	public void registrar(Empleado funcionario) {
 		double boni = funcionario.getBonificacion();
 		this.suma += boni;
 	}

@@ -1,6 +1,6 @@
-import funcionarios.Designer;
-import funcionarios.EditorVideo;
-import funcionarios.Gerente;
+import empleados.Designer;
+import empleados.EditorVideo;
+import empleados.Gerente;
 
 public class TestReferencia {
 	public static void main(String[] args) {
